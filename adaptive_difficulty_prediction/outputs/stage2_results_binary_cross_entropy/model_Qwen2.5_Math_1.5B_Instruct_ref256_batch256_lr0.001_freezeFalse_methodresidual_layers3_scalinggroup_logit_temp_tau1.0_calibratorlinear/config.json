@@ -1,0 +1,19 @@
+{
+  "model_name": "Qwen/Qwen2.5-Math-1.5B-Instruct",
+  "ref_size": 256,
+  "learning_rate": 0.001,
+  "batch_size": 256,
+  "batch_size_per_gpu": 256,
+  "loss_type": "binary_cross_entropy",
+  "data_path": "datasets/",
+  "has_embeddings": true,
+  "freeze_encoder": false,
+  "method": "residual",
+  "num_layers": 3,
+  "use_scheduler": true,
+  "warmup_steps": 100,
+  "scaling": "group_logit_temp",
+  "tau": 1.0,
+  "hidden_size": 896,
+  "calibrator": "linear"
+}

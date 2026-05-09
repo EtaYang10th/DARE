@@ -1,0 +1,274 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+*.so
+
+# ============================================================
+# Model checkpoints & weights (very large)
+# ============================================================
+*.safetensors
+*.bin
+*.ckpt
+*.pt
+*.pth
+
+# ============================================================
+# Training / experiment outputs
+# ============================================================
+rl_training/output/
+rl_training/outputs/
+rl_training/wandb/
+rl_training/run_bash/save_*/
+
+adaptive_difficulty_prediction/outputs/*
+!adaptive_difficulty_prediction/outputs/stage2_results_binary_cross_entropy/
+adaptive_difficulty_prediction/outputs/stage2_results_binary_cross_entropy/*
+!adaptive_difficulty_prediction/outputs/stage2_results_binary_cross_entropy/model_Qwen2.5_Math_1.5B_Instruct_ref256_batch256_lr0.001_freezeFalse_methodresidual_layers3_scalinggroup_logit_temp_tau1.0_calibratorlinear/
+adaptive_difficulty_prediction/adaptive_difficulty_prediction_model_deepscaler.pt
+
+# ============================================================
+# Embeddings (generated, can be reproduced)
+# ============================================================
+adaptive_difficulty_prediction/embeddings/*
+!adaptive_difficulty_prediction/embeddings/Qwen_Qwen2.5-Math-1.5B-Instruct.pt
+adaptive_difficulty_prediction/datasets/embeddings/
+
+# ============================================================
+# Data files (too large for git; document download in README)
+# ============================================================
+adaptive_difficulty_prediction/datasets/*.pkl
+adaptive_difficulty_prediction/datasets/*.parquet
+!adaptive_difficulty_prediction/datasets/questions_deepscaler_10240.parquet
+rl_training/data/*.parquet
+!rl_training/data/deepscaler.parquet
+
+# ============================================================
+# Nested accidental copy
+# ============================================================
+adaptive_difficulty_prediction/data-efficient-llm-rl/
+
+# ============================================================
+# Papers & PDFs (not source code)
+# ============================================================
+*.pdf
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+*.out
+*.err
+nohup.out
+
+# ============================================================
+# Plots & generated images (reproducible from code)
+# ============================================================
+**/plots/
+*.png
+
+# ============================================================
+# OS & editor
+# ============================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ============================================================
+# Misc runtime / serialization
+# ============================================================
+*.pkl
+*.pickle
+
+# ============================================================
+# Ray / distributed training
+# ============================================================
+/tmp/ray/
+ray_results/
+
+# ============================================================
+# Wandb
+# ============================================================
+wandb/
+
+# ============================================================
+# Jupyter
+# ============================================================
+.ipynb_checkpoints/
+
+# ============================================================
+# Keep figures referenced by README (override *.png / *.jpg rules above)
+# ============================================================
+!figures/
+!figures/**
+!figures/*.jpg
+!figures/*.jpeg
+!figures/*.png
+!figures/*.gif
+!figures/*.svg
+
+# ============================================================
+# Keep teacher model checkpoint folder (needed for inference)
+# ============================================================
+!adaptive_difficulty_prediction/outputs/stage2_results_binary_cross_entropy/model_Qwen2.5_Math_1.5B_Instruct_ref256_batch256_lr0.001_freezeFalse_methodresidual_layers3_scalinggroup_logit_temp_tau1.0_calibratorlinear/model_final.pt
+!adaptive_difficulty_prediction/outputs/stage2_results_binary_cross_entropy/model_Qwen2.5_Math_1.5B_Instruct_ref256_batch256_lr0.001_freezeFalse_methodresidual_layers3_scalinggroup_logit_temp_tau1.0_calibratorlinear/training_loss.png
+
+
+rl_training/plot/
+rl_training/run_bash/
+rl_training/plot_*.py
+
+# ============================================================
+# Additional generated datasets / banks
+# ============================================================
+adaptive_difficulty_prediction/datasets/coding/*.parquet
+adaptive_difficulty_prediction/datasets/coding/coding_questions.json
+adaptive_difficulty_prediction/datasets/coding/rollouts/*.json
+adaptive_difficulty_prediction/datasets/coding/logs/
+adaptive_difficulty_prediction/all_merged_teacher_bank/datasets/*.parquet
+adaptive_difficulty_prediction/all_merged_teacher_bank/embeddings/
+
+# ============================================================
+# Anonymization / double-blind release safety
+# ============================================================
+# Never publish local git metadata; it contains author names, emails, remotes,
+# reflogs, and timestamps. This is mainly for manual archive workflows.
+.git/
+
+# Public release should not include ad hoc root launchers. They frequently
+# contain local environment setup, absolute paths, or machine-specific notes.
+/*.sh
+
+# Root-level RL launchers are easy to contaminate with personal paths,
+# cluster accounts, W&B URLs, and local environment names. Keep only the
+# sanitized anonymous example launcher.
+rl_training/*.sh
+!rl_training/run_anonymous_example.sh
+
+# Personal launchers, cluster schedulers, and ad hoc job scripts.
+rl_training/run_bash/
+*.slurm
+*.sbatch
+*.pbs
+*.qsub
+*.lsf
+*.job
+*.submit
+slurm-*.out
+logs/
+**/logs/
+
+# W&B local metadata often stores usernames, hostnames, project URLs,
+# entity names, and absolute paths.
+wandb/
+**/wandb/
+.wandb/
+**/.wandb/
+**/wandb-metadata.json
+**/wandb-summary.json
+**/wandb-history.jsonl
+**/latest-run/
+wandb-secret*
+*wandb_reader*.sh
+
+# Hydra/Ray runtime outputs often store absolute working directories and
+# full command-line overrides.
+**/.hydra/
+.multirun/
+**/multirun/
+ray_results/
+**/ray_results/
+
+# Local/private machine-specific files that often include usernames, hostnames,
+# absolute paths, tokens, or site-specific cluster settings.
+.local/
+**/.local/
+local/
+**/local/
+private/
+**/private/
+scratch/
+**/scratch/
+tmp/
+**/tmp/
+temp/
+**/temp/
+*.local
+*.local.*
+*_local.*
+*.private
+*.private.*
+*_private.*
+*.secret
+*.token
+*.tmp
+*.bak
+*.orig
+
+# Interactive notebooks and packaged archives may contain executed outputs,
+# absolute paths, usernames, or hidden metadata.
+*.ipynb
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.rar
+
+# Profiler, TensorBoard, and tracing outputs can capture host and path metadata.
+*.prof
+*.trace
+profile/
+**/profile/
+profiles/
+**/profiles/
+runs/
+**/runs/
+events.out.tfevents.*
+
+# Known personal or accidental local files from pre-anonymous runs.
+environment.sh
+rl_training/ondemand_run_mcts.slurm
+rl_training/openondemand_run_mcts.slurm
+rl_training/wandb_reader.sh
+rl_training/run_bash/common_ds_teacher_replay_config.sh
+adaptive_difficulty_prediction/data-efficient-llm-rl/
+
+# ============================================================
+# LaTeX build artifacts (from the paper in this repo)
+# ============================================================
+*.aux
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+texput.log
+
+# ============================================================
+# Secrets / credentials (never commit)
+# ============================================================
+.env
+.env.*
+*.pem
+*.key
+*.crt
+id_rsa
+id_rsa.pub
+*.netrc
+.netrc
+.wandb/
+wandb-secret*
+.cache/
+.huggingface/
