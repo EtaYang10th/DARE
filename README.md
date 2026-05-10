@@ -2,7 +2,29 @@
 
 Implementation of **DARE**, a difficulty-adaptive RL framework for LLM reasoning that couples policy-aligned difficulty estimation with difficulty-specific training strategies. DARE improves **training efficiency**, **final accuracy**, and **inference-time token usage** over existing difficulty-aware RL methods.
 
+![Overview](figures/overview.jpg)
+
 ---
+
+## Table of Contents
+[Overview](#empirical-highlights) | [Why DARE](#why-dare) | [What DARE Does](#what-dare-does) | [Installation](#installation) | [Stage 1: Cold-Start Difficulty Estimator](#stage-1--cold-start-difficulty-estimator-optional-but-recommended) | [Stage 2: DARE RL Training](#stage-2--dare-rl-training) | [Repository Layout](#repository-layout) | [Acknowledgements](#acknowledgements)
+
+---
+
+## Empirical Highlights
+
+Across three model scales (Qwen2.5-Math-1.5B, SmolLM3-3B-Base, Qwen2.5-Math-7B) and five math-reasoning benchmarks (MATH-500, GSM8K, AIME-AMC, MinervaMath, OlympiadBench), plus a code-generation transfer setting (HumanEval / MBPP / LiveCodeBench), DARE consistently:
+
+- converges faster than GRPO, DOTS, EDCO, MoPPS, LLM-Judge, and Previous-FR baselines,
+- produces **shorter** outputs on easy prompts and **higher** accuracy on hard prompts,
+- improves final accuracy beyond filtration-only methods.
+
+![Results](figures/performance.jpg)
+
+See the paper for full tables, ablations (reward-shaping, clipping, Beta concentration `κ`, SNIS clip `c`), and per-difficulty-level token/accuracy breakdowns.
+
+---
+
 
 ## Why DARE?
 
@@ -30,21 +52,6 @@ DARE is organized around three components that run each epoch (see the pseudo-co
 
 Each batch mixes a fraction `σ` of fresh on-policy rollouts with `1 − σ` replay-buffer trajectories, trained under a difficulty-conditioned clipped surrogate objective.
 
-![Overview](figures/overview.jpg)
-
-## Empirical Highlights
-
-Across three model scales (Qwen2.5-Math-1.5B, SmolLM3-3B-Base, Qwen2.5-Math-7B) and five math-reasoning benchmarks (MATH-500, GSM8K, AIME-AMC, MinervaMath, OlympiadBench), plus a code-generation transfer setting (HumanEval / MBPP / LiveCodeBench), DARE consistently:
-
-- converges faster than GRPO, DOTS, EDCO, MoPPS, LLM-Judge, and Previous-FR baselines,
-- produces **shorter** outputs on easy prompts and **higher** accuracy on hard prompts,
-- improves final accuracy beyond filtration-only methods.
-
-![Results](figures/performance.jpg)
-
-See the paper for full tables, ablations (reward-shaping, clipping, Beta concentration `κ`, SNIS clip `c`), and per-difficulty-level token/accuracy breakdowns.
-
----
 
 ## Installation
 
