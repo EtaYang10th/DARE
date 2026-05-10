@@ -2,8 +2,6 @@
 
 Anonymous implementation of **DARE**, a difficulty-adaptive RL framework for LLM reasoning that couples policy-aligned difficulty estimation with difficulty-specific training strategies. DARE improves **training efficiency**, **final accuracy**, and **inference-time token usage** over existing difficulty-aware RL methods.
 
-> Anonymous code mirror: <https://anonymous.4open.science/r/rl_efficiency-43DB>
-
 ---
 
 ## Why DARE?
