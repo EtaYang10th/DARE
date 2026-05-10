@@ -9,7 +9,7 @@ Implementation of **DARE**, a difficulty-adaptive RL framework for LLM reasoning
 ---
 
 ## Table of Contents
-[Overview](#empirical-highlights) | [Why DARE](#why-dare) | [What DARE Does](#what-dare-does) | [Installation](#installation) | [Stage 1: Cold-Start Difficulty Estimator](#stage-1--cold-start-difficulty-estimator-optional-but-recommended) | [Stage 2: DARE RL Training](#stage-2--dare-rl-training) | [Repository Layout](#repository-layout) | [Acknowledgements](#acknowledgements)
+[Empirical Highlights](#empirical-highlights) | [Why DARE?](#why-dare) | [What DARE Does](#what-dare-does) | [Installation](#installation) | [Stage 1 — Cold-Start Difficulty Estimator](#stage-1--cold-start-difficulty-estimator-optional-but-recommended) | [Stage 2 — DARE RL Training](#stage-2--dare-rl-training) | [Repository Layout](#repository-layout) | [Acknowledgements](#acknowledgements)
 
 ---
 
