@@ -1,6 +1,25 @@
 # DARE: Difficulty-Adaptive Reinforcement Learning with Co-Evolved Difficulty Estimation
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://arxiv.org/abs/2605.09188">
+    <img src="https://img.shields.io/badge/arXiv-2605.09188-b31b1b.svg" alt="arXiv:2605.09188"/>
+  </a>
+  <a href="https://arxiv.org/pdf/2605.09188">
+    <img src="https://img.shields.io/badge/Paper-PDF-1a56db.svg" alt="Paper PDF"/>
+  </a>
+  <a href="https://github.com/EtaYang10th/DARE">
+    <img src="https://img.shields.io/badge/Code-GitHub-24292e?logo=github&logoColor=white" alt="DARE code"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"/>
+  </a>
+</p>
+
+<p align="center">
+  <b>Paper:</b> <a href="https://arxiv.org/abs/2605.09188">arXiv:2605.09188</a> · <a href="https://arxiv.org/pdf/2605.09188">PDF</a>
+  <br/>
+  <b>Code:</b> <a href="https://github.com/EtaYang10th/DARE">github.com/EtaYang10th/DARE</a>
+</p>
 
 Implementation of **DARE**, a difficulty-adaptive RL framework for LLM reasoning that couples policy-aligned difficulty estimation with difficulty-specific training strategies. DARE improves **training efficiency**, **final accuracy**, and **inference-time token usage** over existing difficulty-aware RL methods.
 
@@ -158,6 +177,26 @@ Each script prints the resolved paths (`TEACHER_ROOT`, `OUTPUT_BASE`, Ray port, 
 ```
 
 The core DARE logic lives in `rl_training/verl/verl/trainer/ppo/` — notably `is_data_selector.py` (SNIS + Beta sampler + Bayesian variant) and `ray_trainer.py` (tiered rollout allocation, reward shaping, replay mix).
+
+---
+
+## Citation
+
+If DARE helps your research, please cite:
+
+```bibtex
+@misc{zhou2026dare,
+  title         = {DARE: Difficulty-Adaptive Reinforcement Learning with Co-Evolved Difficulty Estimation},
+  author        = {Zhou, Yang and Jin, Can and Dong, Zihan and Wang, Zhepeng and
+                   Yang, Yanting and Zhao, Shiyu and Li, Lei and Bao, Runxue and
+                   Xie, Yaochen and Metaxas, Dimitris N.},
+  year          = {2026},
+  eprint        = {2605.09188},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2605.09188}
+}
+```
 
 ---
 
