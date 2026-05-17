@@ -16,6 +16,8 @@
 </p>
 
 <p align="center">
+  <b>Project Page:</b> <a href="https://etayang10th.github.io/dare.github.io/">etayang10th.github.io/dare.github.io</a>
+  <br/>
   <b>Paper:</b> <a href="https://arxiv.org/abs/2605.09188">arXiv:2605.09188</a> · <a href="https://arxiv.org/pdf/2605.09188">PDF</a>
   <br/>
   <b>Code:</b> <a href="https://github.com/EtaYang10th/DARE">github.com/EtaYang10th/DARE</a>
